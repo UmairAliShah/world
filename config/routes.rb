@@ -5,6 +5,11 @@ Rails.application.routes.draw do
    namespace :v1 do
      resources :sessions, only: [:create, :destroy]
      resources :registerations, only: [:create]
+     resources :profiles do
+        collection do
+          patch :update_img
+        end
+     end
    end
   end
 end
